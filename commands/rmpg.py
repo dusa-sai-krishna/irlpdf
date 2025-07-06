@@ -38,7 +38,7 @@ def remove_pages(input_path: str, output_path: str, pages_to_remove: list[int]) 
 	with open(output_path, "wb") as output_file:
 		writer.write(output_file)
 
-	typer.echo(f"✅ Saved PDF with pages removed to: {output_path}")
+	typer.echo(f"Saved PDF with pages removed to: {output_path}")
 
 def rmpg_parser(
 	file: str,
@@ -47,19 +47,19 @@ def rmpg_parser(
 	overwrite: bool = False,
 ):
 	if overwrite and output is not None:
-		typer.echo("❌ Cannot use both --overwrite and --output together.")
+		typer.echo("Cannot use both --overwrite and --output together.")
 		raise typer.Exit()
 
 	output_path = file if overwrite else output
 
 	if not output_path:
-		typer.echo("❌ You must specify either --overwrite or --output.")
+		typer.echo("You must specify either --overwrite or --output.")
 		raise typer.Exit()
 
 	try:
 		page_numbers = parse_pages(pages)
 	except ValueError:
-		typer.echo("❌ Invalid page format.")
+		typer.echo("Invalid page format.")
 		raise typer.Exit()
 
 	remove_pages(file, output_path, page_numbers)

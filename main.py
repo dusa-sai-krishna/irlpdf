@@ -1,21 +1,41 @@
 import typer
 from commands.stats import stats_parser
 from commands.rmpg import rmpg_parser
+from commands.encrypt import encrypt_parser
+from commands.decrypt import decrypt_parser
+
 
 app = typer.Typer()
 
 @app.command()
-def stats(file: str):
-	stats_parser(file)
-
-@app.command()
 def rmpg(
-	file: str = typer.Argument(..., help="Input PDF file"),
-	pages: list[str] = typer.Argument(..., help="Pages to remove (e.g. 1 2 4-6)"),
-	output: str = typer.Option(None, "--output", "-out", help="Output file path"),
-	overwrite: bool = typer.Option(False, "--overwrite", "-o", help="Overwrite input file"),
+	file: str = typer.Argument(...),
+	pages: list[str] = typer.Argument(...),
+	output: str = typer.Option(None, "--output", "-out"),
+	overwrite: bool = typer.Option(False, "--overwrite", "-o"),
 ):
 	rmpg_parser(file, pages, output, overwrite)
 
+@app.command()
+def stats(
+    file: str = typer.Argument(...)
+):
+	stats_parser(file)
+
+@app.command()
+def encrypt(
+	file: str = typer.Argument(...),
+	output: str = typer.Option(None, "--output", "-out"),
+	overwrite: bool = typer.Option(False, "--overwrite", "-o"),
+):
+	encrypt_parser(file, output, overwrite)
+
+@app.command()
+def decrypt(
+	file: str = typer.Argument(...),
+	output: str = typer.Option(None, "--output", "-out"),
+	overwrite: bool = typer.Option(False, "--overwrite", "-o")
+):
+	decrypt_parser(file, output, overwrite)
 if __name__ == "__main__":
 	app()

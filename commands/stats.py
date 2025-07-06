@@ -44,20 +44,20 @@ def print_stats(stats: dict):
 		typer.echo("No stats to display.")
 		return
 
-	typer.echo("\n📄 PDF Statistics")
+	typer.echo("\nPDF Statistics")
 	typer.echo("-" * 40)
-	typer.echo(f"🗂️  File Path    : {stats['file_path']}")
-	typer.echo(f"📄 Page Count   : {stats['num_pages']}")
-	typer.echo(f"🔒 Encrypted    : {'Yes' if stats['is_encrypted'] else 'No'}")
-	typer.echo(f"📦 File Size    : {stats['file_size_mb']} MB")
+	typer.echo(f"File Path    : {stats['file_path']}")
+	typer.echo(f"Page Count   : {stats['num_pages']}")
+	typer.echo(f"Encrypted    : {'Yes' if stats['is_encrypted'] else 'No'}")
+	typer.echo(f"File Size    : {stats['file_size_mb']} MB")
 
 	metadata = stats.get("metadata", {})
 	if metadata and isinstance(metadata, dict):
-		typer.echo("\n📝 Metadata:")
+		typer.echo("\nMetadata:")
 		for key, value in metadata.items():
 			typer.echo(f"   {key:15}: {value}")
 	else:
-		typer.echo("\n📝 Metadata: No metadata available")
+		typer.echo("\nMetadata: No metadata available")
 
 	typer.echo("-" * 40)
 
