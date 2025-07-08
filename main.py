@@ -4,8 +4,16 @@ from commands.rmpg import rmpg_parser
 from commands.encrypt import encrypt_parser
 from commands.decrypt import decrypt_parser
 from commands.split import split_parser
+from commands.merge import merge_parser
 
 app = typer.Typer()
+
+@app.command()
+def merge(
+	files: list[str] = typer.Argument(None),
+	directory: str = typer.Option(None, "--directory", "-d"),
+):
+	merge_parser(files, directory)
 
 @app.command()
 def rmpg(
