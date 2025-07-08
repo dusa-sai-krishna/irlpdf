@@ -2,13 +2,15 @@
 
 [ ] encrypt - add fallbacks for `FileNotDecryptedError`
 
-[ ] compress - implement
+[ ] compress - pypdf2 implementation done but it doesnt really work, find ways to compress pdfs substantially
+
+[x] compress - implement
 
 [ ] convert - implement
 
 [ ] man - implement
 
-[ ] merge - implement
+[x] merge - implement
 
 [x] rmpg - implement 
 

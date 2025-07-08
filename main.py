@@ -5,8 +5,16 @@ from commands.encrypt import encrypt_parser
 from commands.decrypt import decrypt_parser
 from commands.split import split_parser
 from commands.merge import merge_parser
+from commands.compress import compress_parser
 
 app = typer.Typer()
+
+@app.command()
+def compress(
+	files: list[str] = typer.Argument(None),
+	directory: str = typer.Option(None, "--directory", "-d")
+):
+	compress_parser(files, directory)
 
 @app.command()
 def merge(
