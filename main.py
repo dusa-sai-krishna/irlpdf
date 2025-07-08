@@ -3,7 +3,7 @@ from commands.stats import stats_parser
 from commands.rmpg import rmpg_parser
 from commands.encrypt import encrypt_parser
 from commands.decrypt import decrypt_parser
-
+from commands.split import split_parser
 
 app = typer.Typer()
 
@@ -15,6 +15,13 @@ def rmpg(
 	overwrite: bool = typer.Option(False, "--overwrite", "-o"),
 ):
 	rmpg_parser(file, pages, output, overwrite)
+
+@app.command()
+def split(
+	file: str = typer.Argument(...),
+	breakpoints: list[str] = typer.Argument(...),
+):
+	split_parser(file, breakpoints)
 
 @app.command()
 def stats(

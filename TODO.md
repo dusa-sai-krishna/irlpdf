@@ -12,7 +12,7 @@
 
 [x] rmpg - implement 
 
-[ ] split - implement 
+[x] split - implement 
 
 [x] stats - implement 
 
