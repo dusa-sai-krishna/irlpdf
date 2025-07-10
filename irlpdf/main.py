@@ -1,15 +1,15 @@
 import typer
-from commands.stats import stats_parser
-from commands.rmpg import rmpg_parser
-from commands.encrypt import encrypt_parser
-from commands.decrypt import decrypt_parser
-from commands.split import split_parser
-from commands.merge import merge_parser
-from commands.compress import compress_parser
-from commands.man import man_parser
-
+from irlpdf.commands.stats import stats_parser
+from irlpdf.commands.rmpg import rmpg_parser
+from irlpdf.commands.encrypt import encrypt_parser
+from irlpdf.commands.decrypt import decrypt_parser
+from irlpdf.commands.split import split_parser
+from irlpdf.commands.merge import merge_parser
+from irlpdf.commands.compress import compress_parser
+from irlpdf.commands.man import man_parser
 
 app = typer.Typer()
+
 
 @app.command()
 def compress(
