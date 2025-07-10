@@ -6,6 +6,8 @@ from commands.decrypt import decrypt_parser
 from commands.split import split_parser
 from commands.merge import merge_parser
 from commands.compress import compress_parser
+from commands.man import man_parser
+
 
 app = typer.Typer()
 
@@ -15,6 +17,10 @@ def compress(
 	directory: str = typer.Option(None, "--directory", "-d")
 ):
 	compress_parser(files, directory)
+
+@app.command()
+def man(command: str = typer.Argument(...)):
+	man_parser(command)
 
 @app.command()
 def merge(

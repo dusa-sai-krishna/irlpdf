@@ -1,3 +1,5 @@
+[ ] all - fallbacks for `FileNotFound`
+
 [ ] stats - add ability to decrypt pdf and then read stats
 
 [ ] encrypt - add fallbacks for `FileNotDecryptedError`
@@ -6,9 +8,7 @@
 
 [x] compress - implement
 
-[ ] convert - implement
-
-[ ] man - implement
+[x] man - implement
 
 [x] merge - implement
 
