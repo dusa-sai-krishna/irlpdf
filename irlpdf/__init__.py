@@ -1,7 +1,7 @@
 
 
 __app_name__ = "irlpdf"
-__version__ = "0.1.0"
+__version__ = "0.1.8"
 
 (
     SUCCESS,

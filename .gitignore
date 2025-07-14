@@ -2,3 +2,8 @@
 __pycache__
 output
 irlpdf-venv
+setup.py
+build
+dist
+irlpdf.egg-info
+test
